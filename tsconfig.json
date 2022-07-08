@@ -18,7 +18,8 @@
     "noUnusedLocals": true,
     "paths": {
       "@components/*": ["./components/*"],
-      "@module/*": ["./components/module/*"]
+      "@module/*": ["./components/module/*"],
+      "@store/*": ["./store/*"]
     }
   },
   "include": [
