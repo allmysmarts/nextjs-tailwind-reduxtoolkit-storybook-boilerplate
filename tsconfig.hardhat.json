@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@autonomy-dungeon/*": ["./*"],
+    }
+  },
+  "include": ["./scripts", "./tests", "./types", "./artifacts"],
+  "files": ["./hardhat.config.ts"]
+}
