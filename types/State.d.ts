@@ -89,7 +89,14 @@ export interface Boss extends Nft {
 };
 
 export interface Token {
-  // TODO
+  /** ERC20 contract address */
+  contractAddress: string;
+  /**
+   * The amount of token
+   * @dev be careful, it's better to always use vanilla `number` instead of `ethers.BigNumber`,
+   * because BigNumber can throw overflow error when parsing/formatting whereas js number can be arbitrarily large
+   */
+  amount: number;
 };
 
 
