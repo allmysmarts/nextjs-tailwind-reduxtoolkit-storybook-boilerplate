@@ -1,5 +1,5 @@
-// import "assets/sass/style.scss";
-// import "assets/sass/tailwind.scss";
+import 'assets/sass/style.scss';
+import 'assets/sass/tailwind.scss';
 
 import * as NextImage from 'next/image';
 
