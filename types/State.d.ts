@@ -106,6 +106,13 @@ export interface Team extends TeamPool {
   password?: string;
 }
 
+export interface Result {
+  result: boolean; /** true for win, false for lose */ 
+  user: UserState;
+  boss: Boss;
+  teamResult?: boolean;
+}
+
 export interface GlobalState {
   user: UserState;
   heroes?: Hero[];
