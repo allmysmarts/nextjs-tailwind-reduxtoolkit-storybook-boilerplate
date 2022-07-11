@@ -81,8 +81,30 @@ export interface PowerUp extends Nft {};
 
 export interface Boss extends Nft {
   ownerAddress: string;
-  loot: any; // TODO
+  loot: any[]; // TODO -> Can be an NFT or and ERC-20
+
+
 };
+
+/** Current holders of Hero NFTs*/
+export interface Player {
+  ownerAddress: string;
+  nftId: string;
+}
+
+
+/** Current Team Pool for user */
+export interface TeamPool {
+  poolId: string;
+  members: Player[];
+  fighter?: UserState;
+}
+
+/** User Team Selection */
+export interface Team extends TeamPool {
+  selectedMembers?: Player[];
+  password?: string;
+}
 
 export interface GlobalState {
   user: UserState;
