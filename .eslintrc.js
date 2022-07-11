@@ -24,5 +24,6 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'react/jsx-uses-react': 0,
     '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
   },
 };

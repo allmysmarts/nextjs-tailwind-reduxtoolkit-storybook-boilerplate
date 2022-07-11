@@ -1,5 +1,3 @@
-
-
 export interface UserState {
   appNetwork: Network;
 
@@ -7,9 +5,9 @@ export interface UserState {
   address?: string;
   /**
    * Current user wallet network, if `undefined` the user is not connected,
-   * 
+   *
    * **most of the time we shouldn't use this and use `appNetwork` instead**.
-   * 
+   *
    * This is use to check if the wallet as the same network as the app,
    * to sync the app network when the user change the network on it's wallet
    * and to warn the user if he selected an unsupported network on it's wallet.
@@ -65,7 +63,7 @@ export interface Nft {
 export interface Hero extends Nft {
   /**
    * Last time this hero fought a Boss, if `undefined`, we should fetch the data, if null the hero never fought
-   * 
+   *
    * `BossId -> last fight date`
    * @example
    * {
@@ -77,12 +75,12 @@ export interface Hero extends Nft {
   lastFight: Record<string, Date | null>;
 }
 
-export interface PowerUp extends Nft {};
+export interface PowerUp extends Nft {}
 
 export interface Boss extends Nft {
   ownerAddress: string;
   loot: any; // TODO
-};
+}
 
 export interface GlobalState {
   user: UserState;

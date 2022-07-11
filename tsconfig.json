@@ -19,7 +19,8 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@module/*": ["./components/module/*"],
-      "@store/*": ["./store/*"]
+      "@store/*": ["./store/*"],
+      "@assets/*": ["./assets/*"]
     }
   },
   "include": [
