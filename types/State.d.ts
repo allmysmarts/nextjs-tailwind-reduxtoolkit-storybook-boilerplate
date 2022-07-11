@@ -44,7 +44,7 @@ export interface UserState {
 
 /** Standard NFT attribute from OpenSea */
 export interface NftAttribute {
-  trait_type: string;
+  traitType: string;
   value: string | number;
 }
 
@@ -84,10 +84,14 @@ export interface PowerUp extends Nft {};
 
 export interface Boss extends Nft {
   ownerAddress: string;
-  loot: any[]; // TODO -> Can be an NFT or and ERC-20
-
-
+  nftLoot: Nft[]; 
+  tokenLoot: Token[]
 };
+
+export interface Token {
+  // TODO
+};
+
 
 /** Current holders of Hero NFTs*/
 export interface Player {
@@ -113,7 +117,8 @@ export interface Result {
   result: boolean; /** true for win, false for lose */ 
   user: UserState;
   boss: Boss;
-  teamResult?: boolean;
+  nftReward: Nft[];
+  tokenReward: Token[];
 }
 
 export interface GlobalState {
@@ -121,5 +126,6 @@ export interface GlobalState {
   heroes?: Hero[];
   powerUps?: PowerUp[];
   bosses?: Boss[];
+  mode?: string; /** Used to control the game flow/routes */ 
   team?: Team; 
 }
