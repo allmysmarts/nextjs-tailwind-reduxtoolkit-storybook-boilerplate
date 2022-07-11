@@ -22,24 +22,26 @@ export interface UserState {
    */
   selectedHero?: string;
   /**
-   * The current selected power up, if `undefined` there is not selected power up
+   * The current selected power up, if `undefined` there is no selected power up
    * Since power ups could come from multiple contracts the id should be formatted like this
    * @example
    * '<contract-address>:<nft-id>'
    */
   selectedPowerUp?: string;
   /**
-   * The current selected boss, if `undefined` there is not selected boss
+   * The current selected boss, if `undefined` there is no selected boss
    * Since bosses could come from multiple contracts the id should be formatted like this
    * @example
    * '<contract-address>:<nft-id>'
    */
   selectedBoss?: string;
+
+  selectedTeam?: Team;
 }
 
 /** Standard NFT attribute from OpenSea */
 export interface NftAttribute {
-  trait_type: string;
+  traitType: string;
   value: string | number;
 }
 
@@ -79,7 +81,47 @@ export interface PowerUp extends Nft {}
 
 export interface Boss extends Nft {
   ownerAddress: string;
-  loot: any; // TODO
+  nftLoot: Nft[];
+  tokenLoot: Token[];
+}
+
+export interface Token {
+  /** ERC20 contract address */
+  contractAddress: string;
+  /**
+   * The amount of token
+   * @dev be careful, it's better to always use vanilla `number` instead of `ethers.BigNumber`,
+   * because BigNumber can throw overflow error when parsing/formatting whereas js number can be arbitrarily large
+   */
+  amount: number;
+}
+
+/** Current holders of Hero NFTs*/
+export interface Player {
+  ownerAddress: string;
+  nftId: string;
+  twitter?: string;
+}
+
+/** Current Team Pool for user */
+export interface TeamPool {
+  poolId: string;
+  members: Player[];
+  fighter?: UserState;
+}
+
+/** User Team Selection */
+export interface Team extends TeamPool {
+  selectedMembers?: Player[];
+  password?: string;
+}
+
+export interface Result {
+  result: boolean /** true for win, false for lose */;
+  user: UserState;
+  boss: Boss;
+  nftReward: Nft[];
+  tokenReward: Token[];
 }
 
 export interface GlobalState {
@@ -87,5 +129,6 @@ export interface GlobalState {
   heroes?: Hero[];
   powerUps?: PowerUp[];
   bosses?: Boss[];
+  mode?: string /** Used to control the game flow/routes */;
   team?: Team;
 }
