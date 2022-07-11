@@ -24,19 +24,22 @@ export interface UserState {
    */
   selectedHero?: string;
   /**
-   * The current selected power up, if `undefined` there is not selected power up
+   * The current selected power up, if `undefined` there is no selected power up
    * Since power ups could come from multiple contracts the id should be formatted like this
    * @example
    * '<contract-address>:<nft-id>'
    */
   selectedPowerUp?: string;
   /**
-   * The current selected boss, if `undefined` there is not selected boss
+   * The current selected boss, if `undefined` there is no selected boss
    * Since bosses could come from multiple contracts the id should be formatted like this
    * @example
    * '<contract-address>:<nft-id>'
    */
   selectedBoss?: string;
+
+  selectedTeam?: Team;
+
 }
 
 /** Standard NFT attribute from OpenSea */
@@ -90,8 +93,8 @@ export interface Boss extends Nft {
 export interface Player {
   ownerAddress: string;
   nftId: string;
+  twitter?: string;
 }
-
 
 /** Current Team Pool for user */
 export interface TeamPool {
@@ -118,5 +121,5 @@ export interface GlobalState {
   heroes?: Hero[];
   powerUps?: PowerUp[];
   bosses?: Boss[];
-  team?: Team;
+  team?: Team; 
 }
