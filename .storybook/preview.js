@@ -2,8 +2,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import store, { persistor } from 'store';
 
-import 'assets/sass/style.scss';
-import 'assets/sass/tailwind.scss';
+import 'assets/globals.css';
 
 import * as NextImage from 'next/image';
 

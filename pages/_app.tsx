@@ -8,8 +8,7 @@ import { AppLayout } from '@components/layouts/AppLayout';
 import store, { persistor } from 'store';
 
 // Styles
-import 'assets/sass/style.scss';
-import 'assets/sass/tailwind.scss';
+import 'assets/globals.css';
 
 // @ts-ignore TYPE NEEDS FIXING
 function MyApp({ Component, pageProps }) {

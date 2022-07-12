@@ -1,0 +1,13 @@
+.btn-primary {
+  @apply rounded-md border-0 bg-slate-100 p-2 px-6;
+  @apply text-red-500;
+}
+
+.btn-secondary {
+  @apply rounded-md border-0 bg-slate-100 p-2 px-6;
+  @apply text-blue-500;
+}
+
+.text-weight-sample {
+  font-weight: 900;
+}

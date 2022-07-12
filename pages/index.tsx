@@ -27,10 +27,7 @@ const Home: NextPage = () => {
         <br />
         Selected Boss ID: <strong>{bossID}</strong>
         <div>
-          <button
-            className="pointer-events-auto rounded-md bg-indigo-600 py-2 px-3 text-[0.8125rem] font-semibold leading-5 text-white hover:bg-indigo-500"
-            onClick={onClickNext}
-          >
+          <button className="btn-primary text-weight-sample" onClick={onClickNext}>
             Next Boss
           </button>
         </div>
