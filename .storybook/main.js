@@ -21,7 +21,7 @@ module.exports = {
   ],
   framework: '@storybook/react',
   core: {
-    builder: 'webpack5',
+    builder: '@storybook/builder-webpack5',
   },
   webpackFinal: async config => {
     config.resolve.plugins = [
