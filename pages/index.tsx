@@ -17,8 +17,9 @@ const Home: NextPage = () => {
 
   return (
     <div className="p-5">
-      <div className="container mx-auto">
+      <div className="wrapper-example container mx-auto">
         This example demonstrates how to use redux-toolkit.
+        <div className="nested-child">Nest child</div>
         <br />
         Please check <q>pages/index.tsx</q> where it uses boss slice as an example.
         <br />

@@ -11,3 +11,10 @@
 .text-weight-sample {
   font-weight: 900;
 }
+
+.wrapper-example {
+  .nested-child {
+    @apply text-blue-400;
+    background-color: var(--theme-color);
+  }
+}
